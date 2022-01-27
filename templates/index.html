@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <!--Required meta tags-->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+        <!--Stylesheet-->
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}" />
+
+
+        <title>Language Detection</title>
+    </head>
+    <body>
+        <div class="container">
+            <h1><u>Language Detection</u></h1>
+        </div>
+
+        <hr><br>
+
+        <div class="container">
+            <!-- Form -->
+            <div class="container">
+              <form action="{{url_for ('send') }}", method="POST">
+                <label for="text" id="text">Enter text here</label>
+                <br><br>
+                <textarea name="text" class="text_area"  cols="100" rows="15" required="true" ></textarea>
+                <br><br>
+                <button type="submit" class="btn btn-primary btn-lg"  value="predict" id="btn"> Detect language</button>
+
+
+            </form>
+
+                {% if ans is not none %}
+
+                <div class="result">
+
+                    <label for="Result">Language: {{ans}}</label>
+                </div>
+
+
+                {% endif %}
+
+
+
+
+
+        </div>
+
+        <hr>
+
+    </body>
+</html>

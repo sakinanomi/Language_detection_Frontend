@@ -1,0 +1,19 @@
+body{
+    text-align: center;
+    font-size: 20px;
+}
+
+select:invalid {
+     color: gray;
+}
+
+.result{
+    padding: 10px 15px;
+    border-radius: 5px;
+
+}
+
+#btn{
+    color: black;
+    border-color: black;
+}
