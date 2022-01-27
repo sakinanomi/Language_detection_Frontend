@@ -8,10 +8,11 @@ ans=None
 def index():
 	global ans
 
-	return render_template('index.html',ans=ans)
+	return render_template('index.html',text=None,ans=ans)
 
 @app.route('/send',methods=['GET','POST'])
 def send():
+	text=None
 	if request.method == 'POST':
 		text = (request.form.get('text'))
 
@@ -26,7 +27,7 @@ def send():
 
 
 
-	return render_template('index.html',ans=final)
+	return render_template('index.html',text=text,ans=final)
 
 
 
